@@ -1,11 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-</module>
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String[] words = sc.nextLine().split(" ");
+
+        String min = words[0];
+        String max = words[0];
+
+        for (String w : words) {
+            if (w.length() < min.length())
+                min = w;
+            if (w.length() > max.length())
+                max = w;
+        }
+
+        System.out.println(min + " " + min.length());
+        System.out.println(max + " " + max.length());
+
+        sc.close();
+    }
+}
